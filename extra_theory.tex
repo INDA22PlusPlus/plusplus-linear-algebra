@@ -1,0 +1,90 @@
+\documentclass{report}
+
+\include{preamble}
+\include{macros}
+\include{letterfonts}
+
+\title{\Huge{SF1624 Linjär algebra och geometri, bra formler}}
+\author{\huge{}}
+\date{}
+
+
+\begin{document}
+
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{}
+
+\thm{Matrisen som projekterar på $ \vec{v}  $ }
+{
+	För att slippa hålla på med beräkningar med bråktal för att hitta matrisen som beskriver projektionen på vektorn $ \vec{v}  $, så kan man använda formeln nedan:
+\[
+A = \frac{1}{\vec{v} \cdot \vec{v} } \vec{v} \cdot \vec{v}^T
+\]
+Därmed projektionen av vektorn $ \vec{x} $ på vektorn $ \vec{v}  $ beskrivs av matrismultiplikationen $ proj_{ \vec{v} } \vec{x} = A \vec{x}  $  
+}
+
+\thm{Matrisen som projekterar på vektorrummet $ V $ }
+{
+Om vektorummet definieras som $ V := col(A) $, då beskrivs matrisen som projekterar på vektorrummet $ V $ på följande sättet:
+\[
+	P = A (A^T A)^{-1} A^T
+\]
+Alltså för att projektera givna vektorn $ \vec{x}  $ på vektorummet $ V $, så använder man följande matrismultiplikation $ P \vec{x}  $. \textbf{Notera} att det är exakt samma metod som används för minstakvadratmetoden. Projektionen av en vektor på en vektorummet ger den bästa approximationen av givna vektorn på vektorrummet. 
+}
+
+\thm{Ortogonala komplementet till delrummet $ V \in \mathbb{R}^n $ }
+{
+Om man vill hitta ortogonala komplementet (också delrum) till delrummet $ V $ med villkorn att $ V $ inte spannar hela $ \mathbb{R}^n $, så använder man formeln nedan. \textbf{Observera} att $ V := col(A) $
+\[
+	V^\perp = ker(A^T) = null(A^T)
+\]
+	\textbf{Varför}: En ortogonal komplement $ V^\perp $ till delrummet $ V $ innebär att $ \forall \vec{v} \in V^\perp,\: \forall \vec{u} \in V \implies  v \cdot u = 0$. Om $ A $ beskrivs som $ 
+\begin{bmatrix}
+	w_1 & \ldots  & w_k \\
+\end{bmatrix}
+$ så kommer $ A^T $ beskrivas på sättet nedan.
+
+\[ A^T =
+\begin{bmatrix}
+	w_1 \\
+	\vdots \\
+	w_k \\
+\end{bmatrix}
+\]
+Om man multiplicerar $ A^T $ med en vektor $ \vec{x}  $ och försöker bestämma noll-rummet så bestämmer vi per definition ortogonala komponentet, alltså rummet där varje vektor $ \vec{x} \in \mathbb{R}^n $ ger 0 med skalärprodukten av varje vektor som spannar V, ( $ w_1, \ldots w_k ) $ som det kan ses nedan.
+
+\[
+null(A^T \vec{x} ) = ker(A^T \vec{x} ) :=
+\begin{bmatrix}
+	w_1 \cdot \vec{x}  \\
+	\vdots \\
+	w_k \cdot \vec{x} \\
+\end{bmatrix} =
+\begin{bmatrix}
+	0 \\
+	\vdots \\
+	0 \\
+\end{bmatrix}
+\]
+
+}
+
+\thm{En vektor $ \vec{x}  $ kan skrivas som projektionen på en vektorrum + projektionens ortogonala komplement}
+{
+För att kunna bevisa 1.0.2 så brukar man använda denna sats som beskrivs nedan.
+\[
+	\vec{x} = proj_W \vec{x} + proj_{W^\perp} \vec{x}  
+\]
+\[
+		proj_{W^\perp} \vec{x} = \vec{x} - proj_W \vec{x} 
+\]
+
+
+}
+
+\end{document}
