@@ -107,8 +107,10 @@ Theoreum 7.5.8 \& 7.5.9 i boken Contemporary Linear Algebra (s. 365)
 \begin{itemize}
 	\item $A$ och $A A^T$ har samma kolumnrum
 	\item $A$ och $A^T A$ har samma radrum
+	\item Om $A$ har full kolumnrank $ \implies det(A^T A) \ne 0 $
+	\item Om $A$ har full radrank $ \implies det(A A^T) \ne 0 $
 \end{itemize}
-\textbf{Vad} kan man använda detta till? Om man vill kolla för en större matris om det finns en eller flera fria variablar på deras radrum eller kolumnrum så kan man bestämma determinanten av $A^T A$ respektive $A A^T$. Om determinanten $ \ne 0$ då medför det att det \textbf{inte} existerar fria variablar på rad- och kolumnrummet. \textbf{OBS}: $A A^T$ och $A^T A$ är kvadratiska matriser.  
+\textbf{Vad} kan man använda detta till? Om man vill kolla för en större matris om raderna eller kolumnerna är linjärt oberoende, så kan man bestämma determinanten av $A^T A$ respektive $A A^T$. Om determinanten $ \ne 0$ då medför det att kolumerna respektive raderna i matrisen $A$ är linjärt oberoende. \textbf{OBS}: $A A^T$ och $A^T A$ är kvadratiska matriser.  
 }
 
 \end{document}
