@@ -23,7 +23,7 @@
 {
 	För att slippa hålla på med beräkningar med bråktal för att hitta matrisen som beskriver projektionen på vektorn $ \vec{v}  $, så kan man använda formeln nedan:
 \[
-A = \frac{1}{\vec{v} \cdot \vec{v} } \vec{v} \cdot \vec{v}^T
+A = \frac{1}{\vec{v} \cdot \vec{v} } \vec{v} \vec{v}^T
 \]
 Därmed projektionen av vektorn $ \vec{x} $ på vektorn $ \vec{v}  $ beskrivs av matrismultiplikationen $ proj_{ \vec{v} } \vec{x} = A \vec{x}  $  
 }
@@ -56,10 +56,10 @@ $ så kommer $ A^T $ beskrivas på sättet nedan.
 	w_k \\
 \end{bmatrix}
 \]
-Om man multiplicerar $ A^T $ med en vektor $ \vec{x}  $ och försöker bestämma noll-rummet så bestämmer vi per definition ortogonala komponentet, alltså rummet där varje vektor $ \vec{x} \in \mathbb{R}^n $ ger 0 med skalärprodukten av varje vektor som spannar V, ( $ w_1, \ldots w_k ) $ som det kan ses nedan.
+Om man multiplicerar $ A^T $ med en vektor $ \vec{x}  $ och försöker bestämma noll-rummet så bestämmer vi per definition ortogonala komponentet. D.v.s rummet där varje vektor $ \vec{x} \in \mathbb{R}^n $ ger 0 med skalärprodukten av varje vektor som spannar V ($ w_1, \ldots w_k $), som det kan ses nedan.
 
 \[
-null(A^T \vec{x} ) = ker(A^T \vec{x} ) :=
+null(A^T) = ker(A^T) :=
 \begin{bmatrix}
 	w_1 \cdot \vec{x}  \\
 	\vdots \\
@@ -85,6 +85,20 @@ För att kunna bevisa 1.0.2 så brukar man använda denna sats som beskrivs neda
 \]
 
 
+}
+
+\thm{Hitta resterande basvektorer i $ \mathbb{R}^n $ utifrån en mängd linjärt oberoende vektorer $ S $}
+{
+För det, måste storleken av $ S $ vara mindre än $ n $, annars är $ S $ redan en bas för $ \mathbb{R}^n $. Om $ S = \{ w_1, \cdots, w_k\} $, så sätter vi upp dessa vektorer som kolumnelement och sedan löser noll-rummet, som det kan ses nedan.
+\[
+A =
+\begin{bmatrix}
+	w_1 \\
+	\vdots \\
+	w_k
+\end{bmatrix}; \: B := null(A) = ker(A)
+\]
+\textbf{Varför}: Som i 1.0.3 så försöker vi hitta en mängd vektorer ($ B $) som är ortogonala och därmed linjärt oberoende mot varje vektor i $ S $. Detta är ekvivalent med att varje vektor i mängden vektorer vi försöker lösa, $ B $, har skalärprodukten 0 med varje vektor i $ S $. Enligt kraven för linjärt oberoendet av basvektorerna så blir mängden $ S \cup B $ en bas för $ \mathbb{R}^n $.  
 }
 
 \end{document}
