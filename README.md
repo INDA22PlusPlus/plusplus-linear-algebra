@@ -3,7 +3,7 @@ Gjord och skapad av ++:are för ++:are. Va fri och skriv in valfria satser på A
 
 ## Compile?
 För att kompilera PDF:n glöm inte template filerna och själva main tex filen:
-- extra_theory.tex
+- **extra_theory.tex** (main filen)
 - letterfonts.tex
 - macros.tex
 - preamble.tex
