@@ -2,6 +2,13 @@
 Gjord och skapad av ++:are för ++:are. Va fri och skriv in valfria satser på A nivå som inte tas med på kursens föreläsningar.
 
 ## Compile?
+Om du använder CLI latex compiler på UNIX du behöver installera följande paket så att dokumentet kompileras:
+- texlive
+- texlive-latex-base
+- texlive-latex-extra
+- texlive-fonts-extra
+- texlive-science
+
 För att kompilera PDF:n glöm inte template filerna och själva main tex filen:
 - **extra_theory.tex** (main filen)
 - letterfonts.tex
