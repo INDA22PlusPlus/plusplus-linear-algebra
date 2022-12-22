@@ -101,4 +101,14 @@ A =
 \textbf{Varför}: Som i 1.0.3 så försöker vi hitta en mängd vektorer ($ B $) som är ortogonala och därmed linjärt oberoende mot varje vektor i $ S $. Detta är ekvivalent med att varje vektor i mängden vektorer vi försöker lösa, $ B $, har skalärprodukten 0 med varje vektor i $ S $. Enligt kraven för linjärt oberoendet av basvektorerna så blir mängden $ S \cup B $ en bas för $ \mathbb{R}^n $.  
 }
 
+\thm{Sambandet mellan matrisen $A$ och $A^T A$, samt $A A^T$}
+{
+Theoreum 7.5.8 \& 7.5.9 i boken Contemporary Linear Algebra (s. 365)
+\begin{itemize}
+	\item $A$ och $A A^T$ har samma kolumnrum
+	\item $A$ och $A^T A$ har samma radrum
+\end{itemize}
+\textbf{Vad} kan man använda detta till? Om man vill kolla för en större matris om det finns en eller flera fria variablar på deras radrum eller kolumnrum så kan man bestämma determinanten av $A^T A$ respektive $A A^T$. Om determinanten $ \ne 0$ då medför det att det \textbf{inte} existerar fria variablar på rad- och kolumnrummet. \textbf{OBS}: $A A^T$ och $A^T A$ är kvadratiska matriser.  
+}
+
 \end{document}
