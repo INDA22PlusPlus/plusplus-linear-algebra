@@ -1,5 +1,6 @@
 # Bra formler för SF1624 (linjär algebra)
-Gjord och skapad av ++:are för ++:are. Va fri och skriv in valfria satser på A nivå som inte tas med på kursens föreläsningar.
+Va fri och skriv in valfria satser på A nivå som inte tas med på kursens föreläsningar.
+Länken till PDF:n finns [här](https://github.com/INDA22PlusPlus/plusplus-linear-algebra/blob/master/extra_theory.pdf).
 
 ## Compile?
 Om du använder CLI latex compiler på UNIX du behöver installera följande paket så att dokumentet kompileras:
