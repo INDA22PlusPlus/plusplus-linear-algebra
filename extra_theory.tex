@@ -4,6 +4,8 @@
 \include{macros}
 \include{letterfonts}
 
+\usepackage[Glenn]{fncychap}
+
 \title{\Huge{SF1624 Linjär algebra och geometri, bra formler}}
 \author{\huge{}}
 \date{}
@@ -13,11 +15,12 @@
 
 \maketitle
 \newpage
-\pdfbookmark[section]{\contentsname}{toc}
-\tableofcontents
 \pagebreak
 
-\chapter{}
+\chapter{Satser, definitioner}
+
+\nt{\textbf{Synonymer för bildrummet av matrisen $A$}: $\:\:\:Im(A),\:Range(A),\:Col(A)$}
+\nt{\textbf{Synonymer för nollrummet av matrisen $A$}: $\:\:\:ker(A),\:null(A)$}
 
 \thm{Matrisen som projekterar på $ \vec{v}  $ }
 {
@@ -36,6 +39,8 @@ Om vektorummet definieras som $ V := col(A) $, då beskrivs matrisen som projekt
 \]
 Alltså för att projektera givna vektorn $ \vec{x}  $ på vektorummet $ V $, så använder man följande matrismultiplikation $ P \vec{x}  $. \textbf{Notera} att det är exakt samma metod som används för minstakvadratmetoden. Projektionen av en vektor på en vektorummet ger den bästa approximationen av givna vektorn på vektorrummet. 
 }
+
+\pagebreak
 
 \thm{Ortogonala komplementet till delrummet $ V \in \mathbb{R}^n $ }
 {
@@ -101,6 +106,8 @@ A =
 \textbf{Varför}: Som i 1.0.3 så försöker vi hitta en mängd vektorer ($ B $) som är ortogonala och därmed linjärt oberoende mot varje vektor i $ S $. Detta är ekvivalent med att varje vektor i mängden vektorer vi försöker lösa, $ B $, har skalärprodukten 0 med varje vektor i $ S $. Enligt kraven för linjärt oberoendet av basvektorerna så blir mängden $ S \cup B $ en bas för $ \mathbb{R}^n $.  
 }
 
+\pagebreak
+
 \thm{Sambandet mellan matrisen $A$ och $A^T A$, samt $A A^T$}
 {
 Theoreum 7.5.8 \& 7.5.9 i boken Contemporary Linear Algebra (s. 365)
@@ -122,8 +129,6 @@ Symmetriska matriser ($ A^{-1} = A^T $) är ortogonalt diagonaliserbara och kan 
 	\item Egenvektorerna från de olika egenvärden är ortogonala mot varandra $ \implies $ spannar upp hela $ \mathbb{R}^n $.
 \end{itemize}
 }
-
-\pagebreak
 
 \thm{Symmetriska matriser för kvadratiska former}
 {
@@ -149,6 +154,8 @@ A^n + c_1 A^{n-1} + \cdots + c_n I = 0
 \]
 }
 
+\pagebreak
+
 \thm{Multiplikation mellan en matris och en vektor}
 {
 S. 106 i boken "Contemporary Linear Algebra"\\
@@ -170,6 +177,33 @@ row(A)^\perp = null(A), \:\:\: null(A)^\perp = row(A)
 \[
 col(A)^\perp = null(A^T), \:\:\: null(A^T)^\perp = col(A)
 \]
+}
+
+\dfn{Extra om isomorfism}
+{
+	Isomorfism = bijektiv.\\
+	Läs mer om isomorfism i linjär algebra, \href{https://math.libretexts.org/Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/05\%3A_Linear_Transformations/5.06\%3A_Isomorphisms}{här}.
+	\\\\
+	
+	För att bevisa att transformationen $T: V \mapsto W$ med matrisen $A$ är isomorfisk så måste man bevisa följande 3 punkter:
+	\begin{itemize}
+		\item $T(\vec{x})$ är en linjär transformation ($\:T(k\vec{x}) = kT(\vec{x}); \:\:\: T(\vec{a} + \vec{b}) = T(\vec{a}) + T(\vec{b})\:$)
+		\item $T(\vec{x}) = T(\vec{y}) \implies \vec{x} = \vec{y}$ (\textbf{Injektiv}, $\vec{x}$ är unik)
+		\item $\vec{w} \in W \implies \exists \: \vec{v} \in V$ så att $T(\vec{v}) = \vec{w}$
+	\end{itemize}
+	Sista punkten kallas för att vara \textit{Onto} på engelska. Att \textbf{inte} vara \textit{Onto} kan beskrivas på dessa tre ekvivalenta sätt:
+	\begin{itemize}
+		\item $dim(V) < dim(W)$
+		\item Det existerar en vektor $\vec{b} \in W$ så att $T(\vec{x}) = \vec{b}$ inte har en lösning.
+		\item Det existerar en vektor i $W$ som inte är en output av transformationen $T$. 
+	\end{itemize}
+	För att bevisa att transformationen $T$ med matrisen $A$ följer punkt 2, måste man visa att $ker(A)$ består endast av $\vec{0}$, \textbf{alltså} att $ker(A)$ \textbf{inte} har icke-triviala lösningar.\\\\
+	
+	För att bevisa att transformationen $T$ med matrisen $A$ följer punkt 3, måste man visa att $A\vec{x} = \vec{b}$ uppfylls för varje möjlig $\vec{b}$. Detta görs genom att Gauss-eliminiera matrisen $
+\begin{bmatrix}
+	A & | & \vec{b}
+\end{bmatrix}	
+$ och undersöka att högersidan kan alltid uppfyllas. 
 }
 
 \end{document}
