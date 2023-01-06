@@ -207,8 +207,35 @@ col(A)^\perp = null(A^T), \:\:\: null(A^T)^\perp = col(A)
 $ och undersöka att högersidan kan alltid uppfyllas. 
 }
 
-\pagebreak
+\dfn{U + V}
+{
+	Suppose V is a finite-dimensional vector space over some scalar field. 
+	Let U,V be subspaces of V. Then we make the following definition:
 
+\begin{align*}
+	U + V = \{u+v : u \in U \And v \in V \} 
+\end{align*}
+}
+
+\nt{
+	Ni kommer inte finna denna definition direkt användbar, det är inte någon formel på det viset. 
+	Tanken är att det hjälper med resonemangsförmågan att tänka i termer om delrum och summor av delrum.
+}
+
+\ex{orthogonal complements}
+{
+	If R is the row space of a matrix M, and U is the null space of M, then the domain
+	V of M can be described by the vector space sum V = R + U. 
+	This sum is not just any sum, it is a direct sum, which means that any vector v in V 
+	is uniquely represented as: $v = r + u$. $r \in R, u \in U$.
+}
+
+\thm{Dimension of vector space sums}
+{
+	$\dim U+V = \dim U + \dim V - \dim U \cap V$
+}
+
+\pagebreak
 \chapter{Bevistekniker och tips}
 \bt{Tenta 2021-04-09 6b, (Använd att $A$ och $A^T A$ har samma radrum och att $A^T A$ är alltid symmetrisk)}
 {
