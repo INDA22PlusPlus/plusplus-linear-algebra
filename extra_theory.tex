@@ -108,6 +108,7 @@ A =
 
 \pagebreak
 
+\nt{$A^T A$ och $A A^T$ är symmetriska matriser!}
 \thm{Sambandet mellan matrisen $A$ och $A^T A$, samt $A A^T$}
 {
 Theoreum 7.5.8 \& 7.5.9 i boken Contemporary Linear Algebra (s. 365)
@@ -206,4 +207,18 @@ col(A)^\perp = null(A^T), \:\:\: null(A^T)^\perp = col(A)
 $ och undersöka att högersidan kan alltid uppfyllas. 
 }
 
+\pagebreak
+
+\chapter{Bevistekniker}
+\bt{Tenta 2021-04-09 6b, (Använd att $A$ och $A^T A$ har samma radrum och att $A^T A$ är alltid symmetrisk)}
+{
+	Låt $A$ vara en $m \times n$ matris och $A^T$ dess transponat. \textbf{Bevisa} att om $n \geq 2$ då existerar $n$ ortogonala enhetsvektorer $\vec{u_1}, \vec{u_2}, \cdots, \vec{u_n} \in \mathbb{R}^n$ sådana att $A\vec{u_1}, A\vec{u_2}, \cdots, A\vec{u_n}$ är också ortogonala.\\\\
+	
+	Eftersom $A^T A$ är en symmetrisk matris så ger spektralsatsen en ortonormal bas $B = \{\vec{e_1}, \vec{e_2}, \cdots, \vec{e_n}\} \in \mathbb{R}^n$ som består av ortogonala egenvektorer till matrisen $A^T A$ och med längd 1, (enhetsvektorer).\\
+	Låt $\vec{e_i}, \vec{e_j} \in B \implies \vec{e_i} \cdot \vec{e_j} = 0$:\\
+
+\begin{equation*}
+	(A\vec{e_i}) \cdot (A\vec{e_j}) \iff (A\vec{e_i})^T (A\vec{e_j}) \iff \vec{e_i}^T A^T A \vec{e_j} \iff \vec{e_i}^T \lambda_j \vec{e_j} \iff \lambda_j (\vec{e_i} \cdot \vec{e_j}) = 0
+\end{equation*}
+}
 \end{document}
