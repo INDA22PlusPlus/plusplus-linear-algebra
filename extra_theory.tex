@@ -209,7 +209,7 @@ $ och undersöka att högersidan kan alltid uppfyllas.
 
 \pagebreak
 
-\chapter{Bevistekniker}
+\chapter{Bevistekniker och tips}
 \bt{Tenta 2021-04-09 6b, (Använd att $A$ och $A^T A$ har samma radrum och att $A^T A$ är alltid symmetrisk)}
 {
 	Låt $A$ vara en $m \times n$ matris och $A^T$ dess transponat. \textbf{Bevisa} att om $n \geq 2$ då existerar $n$ ortogonala enhetsvektorer $\vec{u_1}, \vec{u_2}, \cdots, \vec{u_n} \in \mathbb{R}^n$ sådana att $A\vec{u_1}, A\vec{u_2}, \cdots, A\vec{u_n}$ är också ortogonala.\\\\
@@ -220,5 +220,23 @@ $ och undersöka att högersidan kan alltid uppfyllas.
 \begin{equation*}
 	(A\vec{e_i}) \cdot (A\vec{e_j}) \iff (A\vec{e_i})^T (A\vec{e_j}) \iff \vec{e_i}^T A^T A \vec{e_j} \iff \vec{e_i}^T \lambda_j \vec{e_j} \iff \lambda_j (\vec{e_i} \cdot \vec{e_j}) = 0
 \end{equation*}
+}
+
+\tip{Hur beräknar man $A^n\vec{x}$ om $A$ \textbf{inte} är diagonaliserbar?}
+{
+	Om $A$ inte är diagonaliserbar, kan man testa utrycka $\vec{x}$ som en linjär kombination av egenvektorerna för $A$. Om den \textbf{inte} kan utryckas som en linjär kombination av egenvektorerna så fungerar \textbf{inte} denna metod.\\\\
+	Låt $\vec{x} = c_1\vec{v_1}+c_2\vec{v_2}+\cdots+\vec{v_n}$, där $\vec{v_1}, \vec{v_2}, \cdots, \vec{v_k}$ är egenvektorer till $A$ med de motsvarande egenvärden $\lambda_1, \lambda_2, \cdots, \lambda_k$. Då kan $A^n\vec{x}$ beräknas på följande sätt:
+\begin{equation}
+	A^n\vec{x} = c_1 \lambda_1^n \vec{v_1} + c_2 \lambda_2^n \vec{v_2} + \cdots + c_n \lambda_k^n \vec{v_k}
+\end{equation}
+	\textbf{Varför}: Om $\vec{x} = c_1\vec{v_1}+c_2\vec{v_2}+\cdots+\vec{v_n}$, så är $A\vec{x}$:
+\begin{equation*}
+	A\vec{x} = A(c_1\vec{v_1})+A(c_2\vec{v_2})+\cdots+A(c_k\vec{v_k}) \iff c_1\lambda_1\vec{v_1}+c_2\lambda_2\vec{v_2}+\cdots+c_k\lambda_k\vec{v_k}
+\end{equation*}
+	Eftersom $c_i\lambda_i$ är konstanter och $A^n\vec{x}$ kan utryckas som:
+\begin{equation*}
+	\underbrace{A(A(A(A(\cdots A(A\vec{x})\cdots))))}_{n}
+\end{equation*}
+	så bevisar det ekvationen 2.1.
 }
 \end{document}

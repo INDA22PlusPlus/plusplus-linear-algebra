@@ -132,6 +132,26 @@
 {bt}
 
 \tcbuselibrary{theorems,skins,hooks}
+\newtcbtheorem[number within=section]{Tip}{Tips}
+{%
+	enhanced,
+	breakable,
+	colback = mypropbg,
+	frame hidden,
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{mypropfr},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	coltitle = mypropfr,
+	fonttitle = \bfseries\sffamily,
+	description font = \mdseries,
+	separator sign none,
+	segmentation style={solid, mypropfr},
+}
+{ti}
+
+\tcbuselibrary{theorems,skins,hooks}
 \newtcbtheorem[number within=chapter]{theorem}{Theorem}
 {%
 	enhanced,
@@ -611,6 +631,7 @@
 
 \newcommand{\thm}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
 \newcommand{\bt}[2]{\begin{ProofTeq}{#1}{}#2\end{ProofTeq}}
+\newcommand{\tip}[2]{\begin{Tip}{#1}{}#2\end{Tip}}
 \newcommand{\cor}[2]{\begin{Corollary}{#1}{}#2\end{Corollary}}
 \newcommand{\mlenma}[2]{\begin{Lenma}{#1}{}#2\end{Lenma}}
 \newcommand{\mprop}[2]{\begin{Prop}{#1}{}#2\end{Prop}}
