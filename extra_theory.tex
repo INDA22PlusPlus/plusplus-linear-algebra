@@ -266,4 +266,49 @@ $ och undersöka att högersidan kan alltid uppfyllas.
 \end{equation*}
 	så bevisar det ekvationen 2.1.
 }
+
+\pagebreak
+
+\bt{Tenta 2020-10-19 5b, (Motsägelsebevis)}
+{
+	Låt $A$ vara en $2 \times 2$ symmetrisk matris. Utan att använda Spektralsatsen visa att det existerar en bas för $\mathbb{R}^2$ bestående av egenvektorer för $A$.\\\\
+	
+	Låt matrisen $A$ definieras på följande sätt: $
+\begin{bmatrix}
+	a & b\\
+	b & c
+\end{bmatrix};\:\:a,b,c \in \mathbb{R}$. Genom att lösa ut $det(\lambda I-A) = 0$ så får vi att egenvärdena är beroende av matrisens värden på följande sätt:
+\begin{equation*}
+	\lambda_{1,2} = \frac{(a+c)\pm\sqrt{(a-c)^2+4b^2}}{2}
+\end{equation*}
+Vi börjar med att anta att $\sqrt{(a-c)^2+4b^2} = 0$. Notera att detta är sant endast när $a = b = c = 0$ eftersom funktionen $x^2 \geq 0, \forall x \in \mathbb{R}$. Nollrummet för en \textbf{noll} $2 \times 2$ matris har baserna $
+\begin{bmatrix}
+	1\\
+	0
+\end{bmatrix},
+\begin{bmatrix}
+	0\\
+	1
+\end{bmatrix}$, eftersom $\forall \vec{x}\implies O\vec{x} = \vec{0}$, där $O$ är nollmatrisen.\\\\
+
+För att bevisa att alla andra möjliga egenvärden har också egenvektorer som spannar upp $\mathbb{R}^2$ så kan vi använda en motsägelsebevis. Vi antar att $\vec{v_1}, \vec{v_2}$ är egenvektorer med egenvärdena $\lambda_1,\lambda_2 \lambda_1 \ne \lambda_2$ och att $\vec{v_2} = k\vec{v_1}, k \in \mathbb{R}, k \ne 0$. Då är \textbf{inte} $\vec{v_1}, \vec{v_2}$ baser för $\mathbb{R}$ eftersom de är linjärt beroende. Genom att anta att $\lambda_1 \ne \lambda_2$, antar att vi $\sqrt{(a-c)^2+4b^2} \ne 0$ (ingen dubbelrot). Vi definierar ytterligare $\vec{v_1} =
+\begin{bmatrix}
+	v_x\\
+	v_y
+\end{bmatrix}
+$. Då kan man ställa upp följande 2 system av ekvationer:
+\begin{equation*}
+\begin{cases}
+(\lambda_1-a)v_x -bv_y = 0\\
+-bv_x+(\lambda_1-c)v_y = 0
+\end{cases}
+\end{equation*}
+\begin{equation*}
+\begin{cases}
+k((\lambda_2-a)v_x -bv_y) = 0\\
+k(-bv_x+(\lambda_2-c)v_y) = 0
+\end{cases}
+\end{equation*}
+Observera att $k$ kan divideras i andra system av ekvationer. För att både system av ekvationer ska gälla så måste $\lambda_1=\lambda_2$ som \textbf{inte} är möjligt eftersom vi antog att $\lambda_1 \ne \lambda_2$. Detta medför en motsägelse som implicerar att egenvektorerna $\vec{v_1}, \vec{v_2}$ måste vara linjärt oberoende och därmed fylla villkorn för att spanna $\mathbb{R}^2$.
+}
 \end{document}
